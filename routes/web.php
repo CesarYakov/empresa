@@ -2,38 +2,32 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
+// Ruta para la página de inicio
 Route::get('/', function () {
     return view('home');
-    //return 'Pantalla principal';
 })->name('home');
 
-Route::get('/services/{parameter?}', function ($parameter=null) {
-    return view('services',['parameter' => $parameter]);
-})->where('parameter', '[A-Za-z]+')->name('services.index');
+// Ruta para la página de servicios con parámetro opcional
+Route::get('/servicios/{nombre?}', function ($nombre = null) {
+    return view('servicios', ['nombre' => $nombre]);
+})->where('nombre', '[a-zA-Z]+')->name('servicios');
 
-Route::get('/projects/{parameter?}', function ($parameter=null) {
-    return view('projects',['parameter' => $parameter]);
-})->where('parameter', '[A-Za-z]+')->name('projects.index');
+// Ruta para la página de proyectos con parámetro opcional
+Route::get('/proyectos/{nombre?}', function ($nombre = null) {
+    return view('proyectos', ['nombre' => $nombre]);
+})->where('nombre', '[a-zA-Z]+')->name('proyectos');
 
-Route::get('/customers/{parameter?}', function ($parameter=null) {
-    return view('customers',['parameter' => $parameter]);
-})->where('parameter', '[A-Za-z]+')->name('customers.index');
+// Ruta para la página de clientes con parámetro opcional
+Route::get('/clientes/{nombre?}', function ($nombre = null) {
+    return view('clientes', ['nombre' => $nombre]);
+})->where('nombre', '[a-zA-Z]+')->name('clientes');
 
-Route::get('/blog/{parameter?}', function ($parameter=null) {
-    return view('blogs',['parameter' => $parameter]);
-})->where('parameter', '[0-9]+')->name('blogs.index');
+// Ruta para la página de blog con parámetro opcional
+Route::get('/blog/{id?}', function ($id = null) {
+    return view('blog', ['id' => $id]);
+})->where('id', '[0-9]+')->name('blog');
 
-Route::get('/contacts', function () {
-    return view('contacts');
-})->name('contacts.index');
+// Ruta para la página de contacto
+Route::get('/contacto', function () {
+    return view('contacto');
+})->name('contacto');
