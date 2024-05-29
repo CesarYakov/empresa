@@ -3,8 +3,8 @@
 @section('content')
 <h1>Blog</h1>
 
-    @if($parameter)
-    <p>El parametro ingresado fue:{{$parameter}} </p>
+    @if($id)
+    <p>El parametro ingresado fue:{{$id}} </p>
     @else
     <p>Sin parametro</p>
     @endif

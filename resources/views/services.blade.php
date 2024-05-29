@@ -3,8 +3,8 @@
 @section('content')
     <h1>Pagina de servicios</h1>
     <h3>¿Que servicio desea realizar?</h3>
-    @if($parameter)
-         <p>El parametro ingresado fue:{{$parameter}} </p>
+    @if($nombre)
+         <p>El parametro ingresado fue:{{$nombre}} </p>
     @else
         <p>Sin parametro</p>
     @endif
